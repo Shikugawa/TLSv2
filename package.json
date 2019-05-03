@@ -1,0 +1,42 @@
+{
+  "name": "twitterlivestreaming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "public/client/main.js",
+  "scripts": {
+    "clear": "rm -rf public/**",
+    "debug": "electron ./app/index.js",
+    "compile": "npx tsc",
+    "pack": "build --mac --x64",
+    "start": "yarn clear && yarn compile && yarn debug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shikugawa/TwitterLiveStreaming.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shikugawa/TwitterLiveStreaming/issues"
+  },
+  "homepage": "https://github.com/Shikugawa/TwitterLiveStreaming#readme",
+  "build": {
+    "appId": "com.electron.twitterlivestreaming",
+    "mac": {
+      "target": "dmg"
+    },
+    "directories": {
+      "output": "docs"
+    }
+  },
+  "dependencies": {
+    "electron": "^1.8.6"
+  },
+  "devDependencies": {
+    "@types/twitter": "^1.7.0",
+    "@types/p5": "^0.7.2",
+    "p5": "^0.6.1",
+    "parcel-bundler": "^1.9.7",
+    "twitter": "^1.7.1",
+    "typescript": "^3.4.1"
+  }
+}
