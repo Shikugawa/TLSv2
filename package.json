@@ -2,13 +2,12 @@
   "name": "twitterlivestreaming",
   "version": "1.0.0",
   "description": "",
-  "main": "public/client/main.js",
+  "main": "index.js",
   "scripts": {
-    "clear": "rm -rf public/**",
-    "debug": "electron ./app/index.js",
-    "compile": "npx tsc",
-    "pack": "build --mac --x64",
-    "start": "yarn clear && yarn compile && yarn debug"
+    "clear": "rm -rf ./dist",
+    "build": "yarn clear && parcel build ./index.html --target=electron",
+    "start": "electron .",
+    "pack": "build --mac --x64"
   },
   "repository": {
     "type": "git",
@@ -29,14 +28,12 @@
     }
   },
   "dependencies": {
-    "electron": "^1.8.6"
+    "dotenv": "^8.0.0",
+    "electron": "^5.0.1",
+    "p5": "^0.6.1",
+    "twitter": "^1.7.1"
   },
   "devDependencies": {
-    "@types/twitter": "^1.7.0",
-    "@types/p5": "^0.7.2",
-    "p5": "^0.6.1",
-    "parcel-bundler": "^1.9.7",
-    "twitter": "^1.7.1",
-    "typescript": "^3.4.1"
+    "parcel": "^1.12.3"
   }
 }
